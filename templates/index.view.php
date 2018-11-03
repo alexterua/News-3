@@ -88,11 +88,13 @@
         <!-- Main -->
         <div id="main">
 
+            <?php foreach ($news as $index => $article): ?>
+            <?php if($index > 2): continue; endif; ?>
             <!-- Post -->
             <article class="post">
                 <header>
                     <div class="title">
-                        <h2><a href="#">НБУ на 2 ноября установил курс евро на уровне 32,08 грн/евро</a></h2>
+                        <h2><a href="/article.php?id=<?php echo $article->id; ?>"><?php echo $article->title; ?></a></h2>
                         <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
                     </div>
                     <div class="meta">
@@ -100,8 +102,8 @@
                         <a href="#" class="author"><span class="name">Василий Теркин</span><img src="templates/images/avatar.jpg" alt="" /></a>
                     </div>
                 </header>
-                <a href="#" class="image featured"><img src="templates/images/article1.jpg" alt="" /></a>
-                <p>Напомним, сегодня, 31 октября 2018 года, в обменных пунктах курс евро в продаже вырос на 4 копейки до 32,25 гривен за евро. Курс покупки евро составляет 30,20 - 32,10 (30,15 - 32,20 - 31 октября), продажи 32,00 - 32,88 (32,00 - 32,87 - 31 октября) грн за евро. Средний курс покупки евро составляет 37,78 (37,77 - 31 октября), продажи - 32,25 (32,21 - 31 октября) грн за евро.</p>
+                <a href="/article.php?id=<?php echo $article->id; ?>" class="image featured"><img src="templates/images/<?php echo $article->image; ?>" alt="<?php echo $article->title; ?>" /></a>
+                <p><?php echo $article->content; ?></p>
                 <footer>
                     <ul class="actions">
                         <li><a href="#" class="button big">Подробнее</a></li>
@@ -113,58 +115,7 @@
                     </ul>
                 </footer>
             </article>
-
-            <!-- Post -->
-            <article class="post">
-                <header>
-                    <div class="title">
-                        <h2><a href="#">В Минздраве рассказали, в каких областях лучше информируют о наличии бесплатных лекарств</a></h2>
-                        <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
-                    </div>
-                    <div class="meta">
-                        <time class="published" datetime="2018-11-01">1 Ноября, 2018</time>
-                        <a href="#" class="author"><span class="name">Василий Теркин</span><img src="templates/images/avatar.jpg" alt="" /></a>
-                    </div>
-                </header>
-                <a href="#" class="image featured"><img src="templates/images/article2.jpg" alt="" /></a>
-                <p>"Ежегодно государство выделяет почти 6 млрд гривен на закупку лекарств на национальном уровне. Еще почти столько же денег тратится на закупку лекарств на местах - из областного, местного и больничного бюджета. При этом пациенты часто платят за свое лечение, поскольку не знают, что могут рассчитывать на лекарства, купленные государством. Именно поэтому необходимо, чтобы больницы доносили к пациентам актуальную информацию об имеющихся лекарствах", - говорится в заявлении ведомства.</p>
-                <footer>
-                    <ul class="actions">
-                        <li><a href="#" class="button big">Подробнее</a></li>
-                    </ul>
-                    <ul class="stats">
-                        <li><a href="#">General</a></li>
-                        <li><a href="#" class="icon fa-heart">28</a></li>
-                        <li><a href="#" class="icon fa-comment">128</a></li>
-                    </ul>
-                </footer>
-            </article>
-
-            <!-- Post -->
-            <article class="post">
-                <header>
-                    <div class="title">
-                        <h2><a href="#">В "Вест Хэме" тренировки тяжелые, но интересные, - Ярмоленко</a></h2>
-                        <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
-                    </div>
-                    <div class="meta">
-                        <time class="published" datetime="2018-11-01">1 Ноября, 2018</time>
-                        <a href="#" class="author"><span class="name">Василий Теркин</span><img src="templates/images/avatar.jpg" alt="" /></a>
-                    </div>
-                </header>
-                <a href="#" class="image featured"><img src="templates/images/article3.jpg" alt="" /></a>
-                <p>Если брать Пеллегрини или Реброва и Хацкевича, с которыми я работал в «Динамо», то больше физических упражнений в Англии. Тренировки тяжёлые, но интересные. Нет бессмысленной беготни, ты всё время работаешь с мячом, делаешь какие-то упражнения. Тебе интересно и тяжело. Любому футболисту нравится работать с мячом", - сказал Ярмоленко.</p>
-                <footer>
-                    <ul class="actions">
-                        <li><a href="#" class="button big">Подробнее</a></li>
-                    </ul>
-                    <ul class="stats">
-                        <li><a href="#">General</a></li>
-                        <li><a href="#" class="icon fa-heart">28</a></li>
-                        <li><a href="#" class="icon fa-comment">128</a></li>
-                    </ul>
-                </footer>
-            </article>
+            <?php endforeach; ?>
 
             <!-- Pagination -->
             <ul class="actions pagination">
