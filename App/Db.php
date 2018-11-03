@@ -29,4 +29,9 @@ class Db
         $sth->execute($data);
         return $sth->fetchAll(\PDO::FETCH_CLASS, $class);
     }
+
+    public function getLastId()
+    {
+        return $this->dbh->lastInsertId();
+    }
 }

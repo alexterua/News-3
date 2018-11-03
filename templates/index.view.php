@@ -106,7 +106,7 @@
                 <p><?php echo $article->content; ?></p>
                 <footer>
                     <ul class="actions">
-                        <li><a href="#" class="button big">Подробнее</a></li>
+                        <li><a href="/article.php?id=<?php echo $article->id; ?>" class="button big">Подробнее</a></li>
                     </ul>
                     <ul class="stats">
                         <li><a href="#">General</a></li>

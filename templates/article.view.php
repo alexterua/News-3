@@ -106,6 +106,9 @@
 								<span class="image featured"><img src="templates/images/<?php echo $article->image; ?>" alt="" /></span>
 								<p><?php echo $article->content; ?></p>
 								<footer>
+                                    <ul class="actions">
+                                        <li><a href="/" class="button big">Назад</a></li>
+                                    </ul>
 									<ul class="stats">
 										<li><a href="#">General</a></li>
 										<li><a href="#" class="icon fa-heart">28</a></li>
